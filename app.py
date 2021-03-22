@@ -24,7 +24,7 @@ def get_tasks():
     return render_template("tasks.html", tasks=tasks)
 
 
-@app.route("/register, methods=['GET', 'POST']")
+@app.route("/register", methods=['GET', 'POST'])
 def register():
     if request.method == "POST":
         # check if username already exists in db

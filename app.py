@@ -99,7 +99,9 @@ def logout():
 
 @app.route("/add_task")
 def add_task():
-    return render_template("add_task.html")
+    #find method on the categories collection to find all the categories
+    categories = mongo.db.categories.find().sort("category_name", 1)#1 means asc
+    return render_template("add_task.html", categories = categories)
 
 
 
